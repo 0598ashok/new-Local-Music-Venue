@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The SoundBox | Documentation</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        :root {
+            --docs-sidebar-width: 300px;
+        }
+        
+        body {
+            background-color: var(--bg-secondary);
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        .docs-sidebar {
+            width: var(--docs-sidebar-width);
+            background: var(--bg-card);
+            border-right: 1px solid var(--border);
+            padding: var(--space-8);
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        
+        .docs-content {
+            flex: 1;
+            padding: var(--space-12) var(--space-20);
+            max-width: 1000px;
+        }
+        
+        section {
+            margin-bottom: var(--space-20);
+            scroll-margin-top: 50px;
+        }
+        
+        h2 {
+            font-size: var(--text-3xl);
+            margin-bottom: var(--space-6);
+            padding-bottom: var(--space-4);
+            border-bottom: 2px solid var(--primary-light);
+            color: var(--primary);
+        }
+        
+        .code-block {
+            background: #1e293b;
+            color: #f8fafc;
+            padding: var(--space-6);
+            border-radius: var(--radius-lg);
+            font-family: var(--font-mono);
+            font-size: var(--text-sm);
+            margin: var(--space-6) 0;
+            overflow-x: auto;
+        }
+        
+        .docs-nav {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .docs-nav-item {
+            margin-bottom: var(--space-3);
+        }
+        
+        .docs-nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .docs-nav-link:hover, .docs-nav-link.active {
+            color: var(--primary);
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-left: 5px;
+        }
+        
+        .badge-new { background: var(--success-light); color: var(--success); }
+    </style>
+</head>
+<body>
+    <aside class="docs-sidebar">
+        <h1 style="font-size: 24px; margin-bottom: 30px;">The SoundBox <span style="font-size: 12px; color: var(--text-muted);">Docs v1.0</span></h1>
+        <ul class="docs-nav">
+            <li class="docs-nav-item"><a href="#installation" class="docs-nav-link">1. Installation Guide</a></li>
+            <li class="docs-nav-item"><a href="#customization" class="docs-nav-link">2. Customization Guide</a></li>
+            <li class="docs-nav-item"><a href="#structure" class="docs-nav-link">3. Page Structure</a></li>
+            <li class="docs-nav-item"><a href="#credits" class="docs-nav-link">4. Credits</a></li>
+            <li class="docs-nav-item"><a href="#changelog" class="docs-nav-link">5. Changelog</a></li>
+            <li class="docs-nav-item"><a href="#support" class="docs-nav-link">6. Support</a></li>
+        </ul>
+    </aside>
+    
+    <main class="docs-content">
+        <section id="installation">
+            <h2>1. Installation Guide</h2>
+            <p>Welcome to The SoundBox template! To get started, follow these simple steps:</p>
+            <ol>
+                <li>Unzip the template folder to your local drive.</li>
+                <li>Open the folder in your favorite code editor (VS Code, Sublime, etc.).</li>
+                <li>To view the template, open <code>index.html</code> (root) in any modern web browser.</li>
+                <li>If you're using a local server (like Live Server extension), ensure the root folder is the base directory.</li>
+            </ol>
+            <div class="code-block">
+                # Sample local server command (if node installed)
+                npx serve .
+            </div>
+        </section>
+        
+        <section id="customization">
+            <h2>2. Customization Guide</h2>
+            <h3>Colors & Branding</h3>
+            <p>All colors are managed via CSS variables in <code>assets/css/style.css</code>. Modify the <code>:root</code> selector to update your brand colors globally.</p>
+            <div class="code-block">
+                :root {
+                  --primary: #7c3aed; /* Your primary color */
+                  --secondary: #ec4899; /* Your secondary color */
+                  --bg: #ffffff; /* Page background */
+                }
+            </div>
+            <h3>Local Fonts</h3>
+            <p>This template uses local fonts for high performance. They are located in <code>assets/fonts/</code>. To change fonts, update the <code>@font-face</code> rules and the <code>--font-primary</code> variable.</p>
+            <h3>Content Replacement</h3>
+            <p>All images are stored in <code>assets/images/</code>. To replace them, simply overwrite the existing files with your own images using the same filenames (recommended format: <strong>WebP</strong>).</p>
+        </section>
+        
+        <section id="structure">
+            <h2>3. Page Structure</h2>
+            <p>The template is organized into 20+ functional pages:</p>
+            <ul>
+                <li><strong>Home Pages:</strong> <code>index.html</code> (Main), <code>index-2.html</code> (Alternate Artist Showcase)</li>
+                <li><strong>Core Pages:</strong> <code>about.html</code>, <code>services.html</code>, <code>shows.html</code>, <code>blog.html</code>, <code>contact.html</code></li>
+                <li><strong>Dashboards:</strong> <code>dashboard-user.html</code> and <code>dashboard-admin.html</code> (Full feature panels)</li>
+                <li><strong>Auth:</strong> <code>login.html</code>, <code>signup.html</code> (with social logins)</li>
+            </ul>
+        </section>
+        
+        <section id="credits">
+            <h2>4. Credits</h2>
+            <p>We use the following high-quality third-party resources:</p>
+            <ul>
+                <li><strong>Fonts:</strong> Inter & Space Grotesk (OFL Licensed)</li>
+                <li><strong>Icons:</strong> Lucide Icons (as SVG)</li>
+                <li><strong>Design Framework:</strong> Custom Vanilla CSS based on modern UI principles.</li>
+                <li><strong>Hosting Compatibility:</strong> Netlify, Vercel, Firebase ready.</li>
+            </ul>
+        </section>
+        
+        <section id="changelog">
+            <h2>5. Changelog</h2>
+            <p><strong>v1.0.0 (March 23, 2026)</strong></p>
+            <ul>
+                <li>Initial Release</li>
+                <li>Added full Admin & User Dashboards</li>
+                <li>Implemented RTL Support</li>
+                <li>Optimized images with WebP format</li>
+                <li>Localized all fonts for 90+ PageSpeed score</li>
+            </ul>
+        </section>
+        
+        <section id="support">
+            <h2>6. Support</h2>
+            <p>Need help? You can reach out via:</p>
+            <ul>
+                <li><strong>Email:</strong> support@thesoundbox.io</li>
+                <li><strong>Documentation:</strong> docs.thesoundbox.io</li>
+                <li><strong>GitHub Issues:</strong> github.com/soundbox/template/issues</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

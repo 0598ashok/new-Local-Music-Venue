@@ -1,0 +1,695 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The SoundBox - Featured Events & Live Artist Spotlights</title>
+  <meta name="description" content="Stay updated with featured concerts and upcoming tours at The SoundBox. Explore our state-of-the-art venue and discover your next favorite band in the heart of ">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="The SoundBox - Live Music Venue & Event Center">
+  <meta property="og:description" content="Experience the best live music at The SoundBox. Buy tickets, join our loyalty club for exclusive presales.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="../assets/images/hero/hero-2.webp">
+  
+  <!-- Fonts -->
+  <!-- Local Fonts Loaded via style.css -->
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237c3aed' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 18V5l12-2v13'%3E%3C/path%3E%3Ccircle cx='6' cy='18' r='3'%3E%3C/circle%3E%3Ccircle cx='18' cy='16' r='3'%3E%3C/circle%3E%3C/svg%3E">
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <!-- ============================================
+       NAVBAR
+       ============================================ -->
+  <header class="navbar" id="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-brand">
+        <div class="navbar-brand-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18V5l12-2v13"></path>
+            <circle cx="6" cy="18" r="3"></circle>
+            <circle cx="18" cy="16" r="3"></circle>
+          </svg>
+        </div>
+        The SoundBox
+      </a>
+      
+      <nav class="navbar-nav" id="navbarNav">
+        <div class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle active">Home</a>
+          <div class="dropdown-menu">
+            <a href="index.html" class="dropdown-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+              Home 1
+            </a>
+            <a href="index-2.html" class="dropdown-item active">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+              Home 2
+            </a>
+          </div>
+        </div>
+        
+        <a href="shows.html" class="nav-link">Shows</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        
+        <div class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle">Dashboard</a>
+          <div class="dropdown-menu">
+            <a href="dashboard-user.html" class="dropdown-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              User Dashboard
+            </a>
+            <a href="dashboard-admin.html" class="dropdown-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="3" y1="9" x2="21" y2="9"></line>
+                <line x1="9" y1="21" x2="9" y2="9"></line>
+              </svg>
+              Admin Dashboard
+            </a>
+          </div>
+        </div>
+        </nav>
+      
+      <div class="navbar-actions">
+        <button class="navbar-btn" id="darkModeToggle" aria-label="Toggle dark mode">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="sun-icon"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="moon-icon" style="display: none;">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        
+        <button class="navbar-btn" id="rtlToggle" aria-label="Toggle RTL" style="font-size: 14px; font-weight: bold; width: auto; padding: 0 12px;">
+          <span class="rtl-text">RTL</span>
+        </button>
+        
+        
+        <!-- Auth Button -->
+        <a href="login.html" class="btn btn-ghost btn-sm" style="margin: 0 4px;">
+          Login
+        </a>
+        <!-- CTA Button -->
+        <a href="shows.html" class="btn btn-primary btn-sm" style="margin: 0 4px;">
+          Get Tickets
+        </a>
+        
+        <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  
+  <!-- ============================================
+       MAIN CONTENT
+       ============================================ -->
+  <main id="main-content">
+    
+    <!-- ============================================
+         HERO SECTION - ALTERNATIVE LAYOUT
+         ============================================ -->
+    <section class="hero">
+      <div class="hero-bg">
+        <img src="../assets/images/hero/hero-2.webp" alt="Rooftop concert at The SoundBox" loading="eager">
+      </div>
+      <div class="hero-overlay" style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(124, 58, 237, 0.4) 100%);"></div>
+      
+      <div class="hero-content" style="max-width: 1000px;">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          New Shows Added Weekly
+        </div>
+        
+        <h1 class="hero-title" style="font-size: clamp(var(--text-4xl), 6vw, var(--text-5xl));">
+          Discover Your Next <span>Live Experience</span>
+        </h1>
+        
+        <p class="hero-description">
+          From intimate acoustic sets to electrifying festivals, find the perfect show 
+          and create memories that last a lifetime.
+        </p>
+        
+        <div class="hero-actions">
+          <a href="shows.html" class="btn btn-primary btn-lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            Browse All Shows
+          </a>
+          <a href="dashboard-user.html" class="btn btn-white btn-lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            Join Loyalty Club
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- ============================================
+         FEATURED SHOWS SECTION
+         ============================================ -->
+    <section class="section" style="padding-top: var(--space-16);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            Featured This Month
+          </span>
+          <h2 class="section-title">Can't-Miss Performances</h2>
+        </div>
+        
+        <!-- Featured Event - Large Card -->
+        <div class="card" style="margin-bottom: var(--space-8); overflow: hidden;">
+          <div class="d-grid" style="grid-template-columns: 1fr 1fr;">
+            <div style="position: relative; min-height: 400px;">
+              <img src="../assets/images/bands/band-3.webp" alt="Neon Pulse performing" style="width: 100%; height: 100%; object-fit: cover; position: absolute;">
+              <div style="position: absolute; top: var(--space-6); left: var(--space-6); background: var(--secondary); color: white; padding: var(--space-2) var(--space-4); border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: var(--font-semibold);">
+                Featured Event
+              </div>
+            </div>
+            <div style="padding: var(--space-10); display: flex; flex-direction: column; justify-content: center;">
+              <div style="display: flex; align-items: center; gap: var(--space-4); margin-bottom: var(--space-4);">
+                <div style="background: var(--primary); color: white; padding: var(--space-3) var(--space-5); border-radius: var(--radius-lg); text-align: center;">
+                  <div style="font-size: var(--text-3xl); font-weight: var(--font-bold); line-height: 1;">02</div>
+                  <div style="font-size: var(--text-xs); text-transform: uppercase;">APR</div>
+                </div>
+                <div>
+                  <p style="color: var(--text-muted); margin: 0; font-size: var(--text-sm);">Saturday Night</p>
+                  <p style="color: var(--text); margin: 0; font-weight: var(--font-semibold);">10:00 PM - Main Stage</p>
+                </div>
+              </div>
+              
+              <h3 style="font-size: var(--text-3xl); margin-bottom: var(--space-2);">Electric Nights Festival</h3>
+              <p style="color: var(--primary); font-weight: var(--font-semibold); margin-bottom: var(--space-4);">Neon Pulse & Special Guests</p>
+              
+              <p style="color: var(--text-secondary); margin-bottom: var(--space-6);">
+                Experience an unforgettable night of electronic music with stunning visuals, 
+                laser shows, and the best EDM artists in the scene. VIP packages available 
+                with backstage access.
+              </p>
+              
+              <div style="display: flex; align-items: center; gap: var(--space-6); margin-bottom: var(--space-6);">
+                <div>
+                  <span style="font-size: var(--text-3xl); font-weight: var(--font-bold); color: var(--text);">$60</span>
+                  <span style="color: var(--text-muted);">/person</span>
+                </div>
+                <div style="display: flex; gap: var(--space-2);">
+                  <span class="badge badge-primary">VIP Available</span>
+                  <span class="badge badge-success">Early Bird</span>
+                </div>
+              </div>
+              
+              <div style="display: flex; gap: var(--space-4);">
+                <a href="#" class="btn btn-primary" style="flex: 1;">Get Tickets</a>
+                <button class="btn btn-outline">Learn More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Secondary Events Grid -->
+        <div class="events-grid" style="grid-template-columns: repeat(3, 1fr);">
+          <article class="event-card">
+            <div class="event-card-image">
+              <img src="../assets/images/bands/band-1.webp" alt="The Echoes" loading="lazy">
+              <div class="event-card-date">
+                <div class="event-card-date-day">25</div>
+                <div class="event-card-date-month">MAR</div>
+              </div>
+            </div>
+            <div class="event-card-content">
+              <h3 class="event-card-title">Electric Dreams Tour</h3>
+              <p class="event-card-artist">The Echoes</p>
+              <div class="event-card-price">$45<span>/person</span></div>
+              <a href="#" class="btn btn-primary w-full">Get Tickets</a>
+            </div>
+          </article>
+          
+          <article class="event-card">
+            <div class="event-card-image">
+              <img src="../assets/images/bands/band-2.webp" alt="Midnight Jazz Quartet" loading="lazy">
+              <div class="event-card-date">
+                <div class="event-card-date-day">28</div>
+                <div class="event-card-date-month">MAR</div>
+              </div>
+            </div>
+            <div class="event-card-content">
+              <h3 class="event-card-title">Jazz Under the Stars</h3>
+              <p class="event-card-artist">Midnight Jazz Quartet</p>
+              <div class="event-card-price">$35<span>/person</span></div>
+              <a href="#" class="btn btn-primary w-full">Get Tickets</a>
+            </div>
+          </article>
+          
+          <article class="event-card">
+            <div class="event-card-image">
+              <img src="../assets/images/bands/band-5.webp" alt="Blue Soul Collective" loading="lazy">
+              <div class="event-card-date">
+                <div class="event-card-date-day">08</div>
+                <div class="event-card-date-month">APR</div>
+              </div>
+              <span class="event-card-badge" style="background: var(--info);">Members Only</span>
+            </div>
+            <div class="event-card-content">
+              <h3 class="event-card-title">Soulful Sunday</h3>
+              <p class="event-card-artist">Blue Soul Collective</p>
+              <div class="event-card-price">$40<span>/person</span></div>
+              <a href="#" class="btn btn-primary w-full">Get Tickets</a>
+            </div>
+          </article>
+        </div>
+        
+        <div class="text-center mt-8">
+          <a href="shows.html" class="btn btn-outline btn-lg">
+            View Full Calendar
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- ============================================
+         VENUE HIGHLIGHTS SECTION
+         ============================================ -->
+    <section class="section" style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="d-grid" style="grid-template-columns: 1fr 1fr; gap: var(--space-16); align-items: center;">
+          <div>
+            <span class="section-label">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+              Our Venue
+            </span>
+            <h2 class="section-title" style="text-align: left;">A Space Designed for Music</h2>
+            <p class="section-description" style="text-align: left;">
+              Our historic venue has been transformed into a state-of-the-art music destination 
+              while preserving its unique character and charm.
+            </p>
+            
+            <div style="display: flex; flex-direction: column; gap: var(--space-4); margin-top: var(--space-8);">
+              <div style="display: flex; align-items: flex-start; gap: var(--space-4);">
+                <div style="width: 48px; height: 48px; background: var(--primary-light); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: var(--primary); flex-shrink: 0;">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 style="margin-bottom: var(--space-1);">Superior Acoustics</h4>
+                  <p style="color: var(--text-secondary); margin: 0;">Professionally designed sound system for crystal-clear audio.</p>
+                </div>
+              </div>
+              
+              <div style="display: flex; align-items: flex-start; gap: var(--space-4);">
+                <div style="width: 48px; height: 48px; background: var(--secondary-light); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: var(--secondary); flex-shrink: 0;">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <div>
+                  <h4 style="margin-bottom: var(--space-1);">Intimate Setting</h4>
+                  <p style="color: var(--text-secondary); margin: 0;">Capacity of 800 for an up-close experience with artists.</p>
+                </div>
+              </div>
+              
+              <div style="display: flex; align-items: flex-start; gap: var(--space-4);">
+                <div style="width: 48px; height: 48px; background: var(--accent-light); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: var(--accent-dark); flex-shrink: 0;">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 style="margin-bottom: var(--space-1);">Full Bar & Kitchen</h4>
+                  <p style="color: var(--text-secondary); margin: 0;">Craft cocktails and locally-sourced food menu.</p>
+                </div>
+              </div>
+            </div>
+            
+            <a href="about.html" class="btn btn-outline" style="margin-top: var(--space-8);">
+              Explore Our Venue
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">
+            <img src="../assets/images/content/venue-interior.webp" alt="Venue interior" style="border-radius: var(--radius-xl); width: 100%; height: 280px; object-fit: cover;">
+            <img src="../assets/images/content/bar.webp" alt="Bar area" style="border-radius: var(--radius-xl); width: 100%; height: 280px; object-fit: cover; margin-top: var(--space-8);">
+            <img src="../assets/images/content/crowd.webp" alt="Concert crowd" style="border-radius: var(--radius-xl); width: 100%; height: 280px; object-fit: cover; margin-top: calc(var(--space-8) * -1);">
+            <img src="../assets/images/content/microphone.webp" alt="Stage microphone" style="border-radius: var(--radius-xl); width: 100%; height: 280px; object-fit: cover;">
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- ============================================
+         LOYALTY CLUB SECTION
+         ============================================ -->
+    <section class="section loyalty-section">
+      <div class="container">
+        <div class="loyalty-content">
+          <div class="loyalty-text">
+            <span class="section-label" style="color: rgba(255,255,255,0.8);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              SoundBox Loyalty Club
+            </span>
+            <h2 class="loyalty-title">Unlock Exclusive Benefits</h2>
+            <p class="loyalty-description">
+              Join our loyalty club and get access to presale tickets, VIP experiences, 
+              member-only events, and special discounts on every show.
+            </p>
+            
+            <div class="loyalty-benefits">
+              <div class="loyalty-benefit">
+                <div class="loyalty-benefit-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <span>Early access to presale tickets</span>
+              </div>
+              <div class="loyalty-benefit">
+                <div class="loyalty-benefit-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <span>10% discount on all ticket purchases</span>
+              </div>
+              <div class="loyalty-benefit">
+                <div class="loyalty-benefit-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <span>Exclusive member-only shows</span>
+              </div>
+            </div>
+            
+            <a href="dashboard-user.html" class="btn btn-white btn-lg">
+              Join for Free
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+          
+          <div class="loyalty-card">
+            <div class="loyalty-card-header">
+              <div class="loyalty-card-avatar">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+              <div class="loyalty-card-info">
+                <h4>Your Membership</h4>
+                <p>Join 12,000+ music lovers</p>
+              </div>
+            </div>
+            
+            <div class="loyalty-card-stats">
+              <div class="loyalty-card-stat">
+                <div class="loyalty-card-stat-value">50+</div>
+                <div class="loyalty-card-stat-label">Presales/Year</div>
+              </div>
+              <div class="loyalty-card-stat">
+                <div class="loyalty-card-stat-value">10%</div>
+                <div class="loyalty-card-stat-label">Discount</div>
+              </div>
+              <div class="loyalty-card-stat">
+                <div class="loyalty-card-stat-value">VIP</div>
+                <div class="loyalty-card-stat-label">Lounge Access</div>
+              </div>
+              <div class="loyalty-card-stat">
+                <div class="loyalty-card-stat-value">Free</div>
+                <div class="loyalty-card-stat-label">To Join</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- ============================================
+         TESTIMONIALS SECTION
+         ============================================ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+            </svg>
+            Fan Reviews
+          </span>
+          <h2 class="section-title">What Our Fans Say</h2>
+        </div>
+        
+        <div class="features-grid">
+          <div class="card" style="padding: var(--space-8);">
+            <div style="display: flex; gap: 4px; margin-bottom: var(--space-4);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <p style="color: var(--text-secondary); margin-bottom: var(--space-6); font-style: italic;">
+              "The SoundBox has the best sound system in the city. Every show feels intimate 
+              no matter where you're standing. The loyalty club is totally worth it!"
+            </p>
+            <div style="display: flex; align-items: center; gap: var(--space-3);">
+              <div style="width: 48px; height: 48px; background: var(--primary-light); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: var(--primary); font-weight: var(--font-bold);">
+                JM
+              </div>
+              <div>
+                <p style="font-weight: var(--font-semibold); margin: 0;">Jessica Martinez</p>
+                <p style="color: var(--text-muted); font-size: var(--text-sm); margin: 0;">Loyalty Club Member</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card" style="padding: var(--space-8);">
+            <div style="display: flex; gap: 4px; margin-bottom: var(--space-4);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <p style="color: var(--text-secondary); margin-bottom: var(--space-6); font-style: italic;">
+              "I've been to venues all over the country and The SoundBox stands out. 
+              The staff is amazing, the drinks are great, and the atmosphere is electric."
+            </p>
+            <div style="display: flex; align-items: center; gap: var(--space-3);">
+              <div style="width: 48px; height: 48px; background: var(--secondary-light); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: var(--secondary); font-weight: var(--font-bold);">
+                DK
+              </div>
+              <div>
+                <p style="font-weight: var(--font-semibold); margin: 0;">David Kim</p>
+                <p style="color: var(--text-muted); font-size: var(--text-sm); margin: 0;">Music Enthusiast</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card" style="padding: var(--space-8);">
+            <div style="display: flex; gap: 4px; margin-bottom: var(--space-4);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <p style="color: var(--text-secondary); margin-bottom: var(--space-6); font-style: italic;">
+              "The presale access alone is worth joining the loyalty club. I've gotten 
+              tickets to sold-out shows multiple times. Best decision ever!"
+            </p>
+            <div style="display: flex; align-items: center; gap: var(--space-3);">
+              <div style="width: 48px; height: 48px; background: var(--accent-light); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: var(--accent-dark); font-weight: var(--font-bold);">
+                AS
+              </div>
+              <div>
+                <p style="font-weight: var(--font-semibold); margin: 0;">Amanda Stevens</p>
+                <p style="color: var(--text-muted); font-size: var(--text-sm); margin: 0;">VIP Member</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  </main>
+  
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 18V5l12-2v13"></path>
+              <circle cx="6" cy="18" r="3"></circle>
+              <circle cx="18" cy="16" r="3"></circle>
+            </svg>
+            The SoundBox
+          </a>
+          <p class="footer-description">
+            Your premier destination for live music experiences. 
+            Where artists and fans connect through unforgettable performances.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="footer-social-link" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="shows.html" class="footer-link">Upcoming Shows</a></li>
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="services.html" class="footer-link">Services</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Support</h4>
+          <ul class="footer-links">
+            <li><a href="dashboard-user.html" class="footer-link">My Account</a></li>
+            <li><a href="#" class="footer-link">FAQs</a></li>
+            <li><a href="#" class="footer-link">Ticket Policy</a></li>
+            <li><a href="#" class="footer-link">Accessibility</a></li>
+            <li><a href="#" class="footer-link">Venue Info</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">123 Music Street, Downtown</a></li>
+            <li><a href="tel:+1234567890" class="footer-link">(123) 456-7890</a></li>
+            <li><a href="mailto:info@soundbox.com" class="footer-link">info@soundbox.com</a></li>
+            <li><a href="#" class="footer-link">Open: Tue-Sun, 6PM-2AM</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="footer-copyright">Â© 2024 The SoundBox. All rights reserved.</p>
+        <div class="footer-payments">
+          <svg width="40" height="25" viewBox="0 0 40 25" fill="none">
+            <rect width="40" height="25" rx="4" fill="#fff" fill-opacity="0.1"/>
+            <text x="20" y="16" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10">VISA</text>
+          </svg>
+          <svg width="40" height="25" viewBox="0 0 40 25" fill="none">
+            <rect width="40" height="25" rx="4" fill="#fff" fill-opacity="0.1"/>
+            <text x="20" y="16" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="8">MC</text>
+          </svg>
+          <svg width="40" height="25" viewBox="0 0 40 25" fill="none">
+            <rect width="40" height="25" rx="4" fill="#fff" fill-opacity="0.1"/>
+            <text x="20" y="16" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="8">AMEX</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
+
