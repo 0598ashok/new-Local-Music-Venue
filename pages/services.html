@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -13,6 +13,65 @@
   <link rel="stylesheet" href="../assets/css/rtl.css">
   
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237c3aed' stroke-width='2'%3E%3Cpath d='M9 18V5l12-2v13'/%3E%3Ccircle cx='6' cy='18' r='3'/%3E%3Ccircle cx='18' cy='16' r='3'/%3E%3C/svg%3E">
+  
+  <style>
+    .service-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl);
+    }
+    .service-image-wrapper {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+    }
+    .service-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .service-card:hover .service-image-wrapper img {
+      transform: scale(1.1);
+    }
+    .service-icon-floating {
+      position: absolute;
+      bottom: -32px;
+      right: var(--space-8);
+      width: 64px;
+      height: 64px;
+      border-radius: var(--radius-xl);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-lg);
+      z-index: 2;
+      background: white;
+    }
+    [data-theme="dark"] .service-icon-floating {
+      background: var(--bg-card);
+    }
+    @media (max-width: 768px) {
+      .service-image-wrapper {
+        height: 180px;
+      }
+      .service-icon-floating {
+        width: 52px;
+        height: 52px;
+        bottom: -26px;
+      }
+    }
+    @media (max-width: 480px) {
+      .service-image-wrapper {
+        height: 160px;
+      }
+    }
+  </style>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -98,17 +157,21 @@
     <!-- Services Grid -->
     <section class="section">
       <div class="container">
-        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: var(--space-8);">
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(350px, 100%), 1fr)); gap: var(--space-8);">
           <!-- Service 1 -->
-          <div class="card" style="padding: var(--space-8);">
-            <div style="width: 64px; height: 64px; background: var(--primary-light); border-radius: var(--radius-xl); display: flex; align-items: center; justify-content: center; color: var(--primary); margin-bottom: var(--space-6);">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-              </svg>
+          <div class="card service-card">
+            <div class="service-image-wrapper">
+              <img src="../assets/images/content/service-private.png" alt="Private Events & Corporate Gatherings">
+              <div class="service-icon-floating" style="color: var(--primary);">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
             </div>
+            <div style="padding: var(--space-8); padding-top: var(--space-12);">
             <h3 style="margin-bottom: var(--space-3);">Private Events</h3>
             <p style="color: var(--text-secondary); margin-bottom: var(--space-6);">Host your corporate events, product launches, or celebrations in our versatile venue space with full AV support.</p>
             <ul style="list-style: none; padding: 0; margin: 0 0 var(--space-6); display: flex; flex-direction: column; gap: var(--space-2);">
@@ -127,14 +190,19 @@
             </ul>
             <a href="contact.html" class="btn btn-outline w-full">Learn More</a>
           </div>
+        </div>
           
           <!-- Service 2 -->
-          <div class="card" style="padding: var(--space-8);">
-            <div style="width: 64px; height: 64px; background: var(--secondary-light); border-radius: var(--radius-xl); display: flex; align-items: center; justify-content: center; color: var(--secondary); margin-bottom: var(--space-6);">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2l9 4.9V17L12 22l-9-4.9V7z"></path>
-              </svg>
+          <div class="card service-card">
+            <div class="service-image-wrapper">
+              <img src="../assets/images/content/service-rental.png" alt="Full Venue Rental for Concerts & Festivals">
+              <div class="service-icon-floating" style="color: var(--secondary);">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2l9 4.9V17L12 22l-9-4.9V7z"></path>
+                </svg>
+              </div>
             </div>
+            <div style="padding: var(--space-8); padding-top: var(--space-12);">
             <h3 style="margin-bottom: var(--space-3);">Venue Rental</h3>
             <p style="color: var(--text-secondary); margin-bottom: var(--space-6);">Rent our entire venue for your concert, festival, or special event. Complete with stage, sound, and lighting.</p>
             <ul style="list-style: none; padding: 0; margin: 0 0 var(--space-6); display: flex; flex-direction: column; gap: var(--space-2);">
@@ -153,18 +221,23 @@
             </ul>
             <a href="contact.html" class="btn btn-outline w-full">Learn More</a>
           </div>
+        </div>
           
           <!-- Service 3 -->
-          <div class="card" style="padding: var(--space-8);">
-            <div style="width: 64px; height: 64px; background: var(--accent-light); border-radius: var(--radius-xl); display: flex; align-items: center; justify-content: center; color: var(--accent-dark); margin-bottom: var(--space-6);">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
-                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
-                <line x1="6" y1="1" x2="6" y2="4"></line>
-                <line x1="10" y1="1" x2="10" y2="4"></line>
-                <line x1="14" y1="1" x2="14" y2="4"></line>
-              </svg>
+          <div class="card service-card">
+            <div class="service-image-wrapper">
+              <img src="../assets/images/content/service-catering.png" alt="Premium Bar & Custom Catering Services">
+              <div class="service-icon-floating" style="color: var(--accent-dark);">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                  <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                  <line x1="6" y1="1" x2="6" y2="4"></line>
+                  <line x1="10" y1="1" x2="10" y2="4"></line>
+                  <line x1="14" y1="1" x2="14" y2="4"></line>
+                </svg>
+              </div>
             </div>
+            <div style="padding: var(--space-8); padding-top: var(--space-12);">
             <h3 style="margin-bottom: var(--space-3);">Bar & Catering</h3>
             <p style="color: var(--text-secondary); margin-bottom: var(--space-6);">Full-service bar with craft cocktails, local beers, and premium wines. Custom catering menus available.</p>
             <ul style="list-style: none; padding: 0; margin: 0 0 var(--space-6); display: flex; flex-direction: column; gap: var(--space-2);">
@@ -183,15 +256,20 @@
             </ul>
             <a href="contact.html" class="btn btn-outline w-full">Learn More</a>
           </div>
+        </div>
           
           <!-- Service 4 -->
-          <div class="card" style="padding: var(--space-8);">
-            <div style="width: 64px; height: 64px; background: var(--info-light); border-radius: var(--radius-xl); display: flex; align-items: center; justify-content: center; color: var(--info); margin-bottom: var(--space-6);">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-              </svg>
+          <div class="card service-card">
+            <div class="service-image-wrapper">
+              <img src="../assets/images/content/service-streaming.png" alt="Professional Live Streaming & Broadcasting">
+              <div class="service-icon-floating" style="color: var(--info);">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                </svg>
+              </div>
             </div>
+            <div style="padding: var(--space-8); padding-top: var(--space-12);">
             <h3 style="margin-bottom: var(--space-3);">Live Streaming</h3>
             <p style="color: var(--text-secondary); margin-bottom: var(--space-6);">Broadcast your event to audiences worldwide with our professional live streaming service.</p>
             <ul style="list-style: none; padding: 0; margin: 0 0 var(--space-6); display: flex; flex-direction: column; gap: var(--space-2);">
@@ -210,15 +288,20 @@
             </ul>
             <a href="contact.html" class="btn btn-outline w-full">Learn More</a>
           </div>
+        </div>
           
           <!-- Service 5 -->
-          <div class="card" style="padding: var(--space-8);">
-            <div style="width: 64px; height: 64px; background: var(--success-light); border-radius: var(--radius-xl); display: flex; align-items: center; justify-content: center; color: var(--success); margin-bottom: var(--space-6);">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polygon points="10 8 16 12 10 16 10 8"></polygon>
-              </svg>
+          <div class="card service-card">
+            <div class="service-image-wrapper">
+              <img src="../assets/images/content/service-studio.png" alt="High-End Recording Studio & Production">
+              <div class="service-icon-floating" style="color: var(--success);">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                </svg>
+              </div>
             </div>
+            <div style="padding: var(--space-8); padding-top: var(--space-12);">
             <h3 style="margin-bottom: var(--space-3);">Recording Studio</h3>
             <p style="color: var(--text-secondary); margin-bottom: var(--space-6);">Professional recording facilities for live albums, podcasts, and video production.</p>
             <ul style="list-style: none; padding: 0; margin: 0 0 var(--space-6); display: flex; flex-direction: column; gap: var(--space-2);">
@@ -237,14 +320,19 @@
             </ul>
             <a href="contact.html" class="btn btn-outline w-full">Learn More</a>
           </div>
-          
-          <!-- Service 6 -->
-          <div class="card" style="padding: var(--space-8);">
-            <div style="width: 64px; height: 64px; background: var(--warning-light); border-radius: var(--radius-xl); display: flex; align-items: center; justify-content: center; color: var(--warning); margin-bottom: var(--space-6);">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-              </svg>
+        </div>
+        
+        <!-- Service 6 -->
+          <div class="card service-card">
+            <div class="service-image-wrapper">
+              <img src="../assets/images/content/service-artist.png" alt="Artist Backline & Premium Green Room Services">
+              <div class="service-icon-floating" style="color: var(--warning);">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
             </div>
+            <div style="padding: var(--space-8); padding-top: var(--space-12);">
             <h3 style="margin-bottom: var(--space-3);">Artist Services</h3>
             <p style="color: var(--text-secondary); margin-bottom: var(--space-6);">Backline equipment, green room facilities, and dedicated support for performing artists.</p>
             <ul style="list-style: none; padding: 0; margin: 0 0 var(--space-6); display: flex; flex-direction: column; gap: var(--space-2);">

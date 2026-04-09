@@ -178,7 +178,7 @@ const initMobileNav = () => {
     const toggle = dropdown.querySelector('.dropdown-toggle');
     
     toggle?.addEventListener('click', (e) => {
-      if (window.innerWidth <= 768) {
+      if (window.innerWidth <= 1024) {
         e.preventDefault();
         dropdown.classList.toggle('active');
       }
