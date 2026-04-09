@@ -324,7 +324,7 @@
 }
 
 /* Mobile Menu */
-@media (max-width: 639px) {
+@media (max-width: 1024px) {
   [dir="rtl"] .navbar-nav {
     transform: translateX(100%);
   }

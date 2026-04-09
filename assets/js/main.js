@@ -166,6 +166,25 @@ const initMobileNav = () => {
   const navbarNav = document.getElementById('navbarNav');
   const dropdowns = document.querySelectorAll('.dropdown');
   
+  // Clone CTA buttons to mobile menu
+  const navbarActions = document.querySelector('.navbar-actions');
+  if (navbarActions && navbarNav && !document.querySelector('.mobile-cta-container')) {
+    const ctaButtons = navbarActions.querySelectorAll('.btn:not(.navbar-btn)');
+    if (ctaButtons.length > 0) {
+      const mobileCtaContainer = document.createElement('div');
+      mobileCtaContainer.className = 'mobile-cta-container';
+      
+      ctaButtons.forEach(btn => {
+        const clonedBtn = btn.cloneNode(true);
+        clonedBtn.style.margin = '0';
+        clonedBtn.style.width = '100%';
+        mobileCtaContainer.appendChild(clonedBtn);
+      });
+      
+      navbarNav.appendChild(mobileCtaContainer);
+    }
+  }
+  
   // Toggle mobile menu
   navbarToggle?.addEventListener('click', () => {
     navbarNav?.classList.toggle('active');

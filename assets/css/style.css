@@ -1049,6 +1049,10 @@ input, textarea, select {
   color: var(--primary);
 }
 
+.mobile-cta-container {
+  display: none !important;
+}
+
 /* Mobile Menu Toggle */
 .navbar-toggle {
   display: none;
@@ -1555,11 +1559,12 @@ input, textarea, select {
 
   /* === NAVBAR === */
   .navbar-nav {
-    position: fixed;
+    position: absolute;
     top: var(--navbar-height);
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: auto;
+    height: calc(100vh - var(--navbar-height));
     background: var(--bg);
     flex-direction: column;
     align-items: flex-start;
@@ -1569,17 +1574,43 @@ input, textarea, select {
     transition: transform var(--transition-base);
     overflow-y: auto;
     z-index: var(--z-fixed);
-    border-right: 1px solid var(--border);
-    width: 280px;
-    box-shadow: var(--shadow-xl);
+    border-top: 1px solid var(--border);
+    width: 100%;
   }
 
   .navbar-nav.active {
     transform: translateX(0);
   }
 
+  .nav-item {
+    width: 100%;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: var(--space-3) 0;
+    font-size: var(--text-lg);
+    justify-content: space-between;
+  }
+
   .navbar-toggle {
     display: flex;
+    z-index: 1000;
+  }
+
+  /* Prevent navbar from overflowing by hiding CTA buttons to make space for the menu bar */
+  .navbar-actions .btn:not(.navbar-btn) {
+    display: none !important;
+  }
+
+  .mobile-cta-container {
+    display: flex !important;
+    flex-direction: column;
+    gap: var(--space-3);
+    width: 100%;
+    margin-top: var(--space-4);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--border);
   }
 
   .dropdown-menu {
