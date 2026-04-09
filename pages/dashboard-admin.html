@@ -24,8 +24,19 @@
       position: fixed; 
       height: 100vh; 
       overflow-y: auto; 
-      z-index: 1000;
+      z-index: 1100;
       transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Sidebar Toggle - Hidden on desktop */
+    .sidebar-toggle { display: none; }
+
+    /* Glass Card Styles */
+    .glass-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px) saturate(180%);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
     }
     
     /* Sidebar Overlay */
@@ -34,7 +45,7 @@
       inset: 0;
       background: rgba(0, 0, 0, 0.5);
       backdrop-filter: blur(4px);
-      z-index: 999;
+      z-index: 1050;
       display: none;
       opacity: 0;
       transition: opacity 0.3s ease;
@@ -58,7 +69,8 @@
     /* Header */
     .dashboard-header { 
       height: 70px; 
-      background: var(--bg-card); 
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border); 
       display: flex; 
       align-items: center; 
@@ -257,7 +269,7 @@
     /* Content Grid */
     .content-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
       gap: var(--space-8);
       margin-bottom: var(--space-8);
     }
@@ -418,9 +430,22 @@
       .dashboard-main { margin-left: 0; width: 100%; }
       .sidebar-toggle { display: flex; }
       .user-info { display: none; }
-      .dashboard-content { padding: var(--space-4); }
+      .dashboard-content { padding: var(--space-5); }
       .booking-item { flex-wrap: wrap; gap: var(--space-2); }
       .booking-amount { width: 100%; text-align: left; padding-left: 52px; }
+    }
+
+    @media (max-width: 768px) {
+      .dashboard-header { padding: 0 var(--space-4); }
+      .dashboard-content { padding: var(--space-5); }
+      .page-header { flex-direction: column; align-items: flex-start; gap: var(--space-4); }
+      .stats-grid { grid-template-columns: 1fr; gap: var(--space-4); }
+      .content-grid { grid-template-columns: 1fr; gap: var(--space-4); }
+    }
+
+    @media (max-width: 480px) {
+      .dashboard-content { padding: var(--space-4); }
+      .stat-card { padding: var(--space-4); }
     }
 
     /* Responsive Table Stack */
@@ -580,9 +605,6 @@
                 <div class="stat-value">$48,250</div>
                 <div class="stat-label">Total Revenue</div>
               </div>
-              <div class="stat-icon" style="width: 54px; height: 54px;">
-                <img src="../assets/images/ui/v4/revenue_3d.png" alt="Revenue" style="width: 100%; height: 100%; object-fit: contain;">
-              </div>
             </div>
             <div class="stat-change positive">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -597,9 +619,6 @@
               <div>
                 <div class="stat-value">1,247</div>
                 <div class="stat-label">Tickets Sold</div>
-              </div>
-              <div class="stat-icon" style="width: 54px; height: 54px;">
-                <img src="../assets/images/ui/v4/tickets_3d.png" alt="Tickets" style="width: 100%; height: 100%; object-fit: contain;">
               </div>
             </div>
             <div class="stat-change positive">
@@ -616,9 +635,6 @@
                 <div class="stat-value">12,450</div>
                 <div class="stat-label">Active Members</div>
               </div>
-              <div class="stat-icon" style="width: 54px; height: 54px;">
-                <img src="../assets/images/ui/v4/members_3d.png" alt="Members" style="width: 100%; height: 100%; object-fit: contain;">
-              </div>
             </div>
             <div class="stat-change positive">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -633,9 +649,6 @@
               <div>
                 <div class="stat-value">18</div>
                 <div class="stat-label">Upcoming Events</div>
-              </div>
-              <div class="stat-icon" style="width: 54px; height: 54px;">
-                <img src="../assets/images/ui/v4/events_3d.png" alt="Events" style="width: 100%; height: 100%; object-fit: contain;">
               </div>
             </div>
             <div style="font-size: var(--text-xs); color: var(--text-muted); margin-top: var(--space-2);">Next 30 days</div>
