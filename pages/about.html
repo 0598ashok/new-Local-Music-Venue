@@ -15,6 +15,12 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237c3aed' stroke-width='2'%3E%3Cpath d='M9 18V5l12-2v13'/%3E%3Ccircle cx='6' cy='18' r='3'/%3E%3Ccircle cx='18' cy='16' r='3'/%3E%3C/svg%3E">
   
   <style>
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-16);
+      align-items: center;
+    }
     .team-card img {
       transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
@@ -29,6 +35,10 @@
       box-shadow: var(--shadow-xl);
     }
     @media (max-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+      }
       .team-card img {
         height: 220px !important;
       }
@@ -166,7 +176,7 @@
     <!-- Story Section -->
     <section class="section">
       <div class="container">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-16); align-items: center;">
+        <div class="about-grid">
           <div>
             <span class="section-label" style="text-align: left;">Our History</span>
             <h2 class="section-title" style="text-align: left;">15 Years of Live Music Excellence</h2>
@@ -187,7 +197,7 @@
           </div>
           <div style="position: relative;">
             <img src="../assets/images/content/venue-interior.webp" alt="The SoundBox venue interior" style="border-radius: var(--radius-2xl); width: 100%;">
-            <div style="position: absolute; bottom: calc(var(--space-6) * -1); right: calc(var(--space-6) * -1); background: var(--primary); color: white; padding: var(--space-6); border-radius: var(--radius-xl); text-align: center;">
+            <div class="glass-card" style="position: absolute; bottom: calc(var(--space-6) * -1); right: calc(var(--space-6) * -1); background: var(--primary); color: white; padding: var(--space-6); border-radius: var(--radius-xl); text-align: center; border: 1px solid rgba(255,255,255,0.2);">
               <div style="font-size: var(--text-4xl); font-weight: var(--font-bold);">15+</div>
               <div style="font-size: var(--text-sm);">Years</div>
             </div>
@@ -209,56 +219,38 @@
           <h2 class="section-title">What We Stand For</h2>
         </div>
         
-        <div class="features-grid" style="justify-content: center;">
-          <div class="feature-card" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+        <div class="features-grid">
+          <div class="feature-card glass-card" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
             <div class="feature-icon" style="margin-bottom: var(--space-6);">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
-                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
-              </svg>
+              <img src="../assets/images/ui/v4/artists_3d.png" alt="Support Local Artists" style="width: 100%; height: 100%; object-fit: contain;">
             </div>
             <h3 class="feature-title">Support Local Artists</h3>
             <p class="feature-description">We provide a platform for emerging talent to showcase their music and build their audience.</p>
           </div>
           
-          <div class="feature-card" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+          <div class="feature-card glass-card" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
             <div class="feature-icon" style="margin-bottom: var(--space-6);">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-              </svg>
+              <img src="../assets/images/ui/v4/community_3d.png" alt="Build Community" style="width: 100%; height: 100%; object-fit: contain;">
             </div>
             <h3 class="feature-title">Build Community</h3>
             <p class="feature-description">Music brings people together. We foster connections between artists and fans.</p>
           </div>
           
-          <div class="feature-card" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+          <div class="feature-card glass-card" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
             <div class="feature-icon" style="margin-bottom: var(--space-6);">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"></circle>
-                <line x1="2" y1="12" x2="22" y2="12"></line>
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-              </svg>
+              <img src="../assets/images/ui/v4/diversity_3d.png" alt="Celebrate Diversity" style="width: 100%; height: 100%; object-fit: contain;">
             </div>
             <h3 class="feature-title">Celebrate Diversity</h3>
             <p class="feature-description">We showcase music from all genres and cultures, celebrating the rich tapestry of sound.</p>
           </div>
 
           <!-- Mission 4 -->
-          <div class="feature-card" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+          <div class="feature-card glass-card" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
             <div class="feature-icon" style="margin-bottom: var(--space-6);">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
-              </svg>
+              <img src="../assets/images/ui/v4/sound_tech_3d.png" alt="Excellence in Sound" style="width: 100%; height: 100%; object-fit: contain;">
             </div>
             <h3 class="feature-title">Excellence in Sound</h3>
             <p class="feature-description">We invest in the latest audio technology to ensure every performance is heard with studio-quality clarity.</p>
-          </div>
-
-            </div>
           </div>
         </div>
       </div>

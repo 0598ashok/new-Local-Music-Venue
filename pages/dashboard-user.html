@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -252,6 +252,8 @@
     /* Page Title */
     .page-header {
       display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4);
       align-items: center;
       justify-content: space-between;
       margin-bottom: var(--space-8);
@@ -313,7 +315,7 @@
       .content-grid { grid-template-columns: 1fr; }
     }
     
-    @media (max-width: 639px) {
+    @media (max-width: 1024px) {
       .dashboard-sidebar { 
         transform: translateX(-100%); 
       }
@@ -328,6 +330,7 @@
       }
       .stats-grid { grid-template-columns: 1fr; }
       .user-info { display: none; }
+      .ticket-card { flex-direction: column; }
     }
   </style>
   
@@ -636,4 +639,5 @@
   </script>
 </body>
 </html>
+
 

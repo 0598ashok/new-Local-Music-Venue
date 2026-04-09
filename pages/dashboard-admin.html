@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -14,7 +14,7 @@
   
   <style>
     /* Dashboard Layout */
-    .dashboard-layout { display: flex; min-height: 100vh; }
+    .dashboard-layout { display: flex; min-height: 100vh; position: relative; }
     
     /* Sidebar - Always visible on desktop */
     .dashboard-sidebar { 
@@ -24,8 +24,25 @@
       position: fixed; 
       height: 100vh; 
       overflow-y: auto; 
-      z-index: 100;
-      transition: transform 0.3s ease;
+      z-index: 1000;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* Sidebar Overlay */
+    .sidebar-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .sidebar-overlay.active {
+      display: block;
+      opacity: 1;
     }
     
     /* Main Content */
@@ -35,6 +52,7 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      width: calc(100% - 260px);
     }
     
     /* Header */
@@ -55,6 +73,9 @@
       flex: 1;
       padding: var(--space-8); 
       background: var(--bg);
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
     }
     
     /* Sidebar Navigation */
@@ -99,10 +120,81 @@
       flex-shrink: 0;
     }
     
+    /* Premium Dashboard Enhancements */
+    .navbar-brand-icon {
+      background: linear-gradient(135deg, #ec4899 0%, #7c3aed 100%);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
+    }
+    
+    .user-avatar {
+      width: 40px;
+      height: 40px;
+      background: #ec4899;
+      color: white;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: var(--text-sm);
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(236, 72, 153, 0.2);
+    }
+    
+    .user-name {
+      font-weight: 600;
+      font-size: var(--text-sm);
+      color: var(--text);
+      line-height: 1.2;
+    }
+    
+    .user-role {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.2;
+    }
+
+    .user-menu {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+    }
+    
+    .navbar-btn {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-lg);
+      color: var(--text-secondary);
+      transition: all 0.2s ease;
+      background: transparent;
+      padding: 0;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .navbar-btn:hover {
+      background: var(--bg-secondary);
+      color: var(--text);
+    }
+
+    @media (max-width: 640px) {
+      .dashboard-header { padding: 0 var(--space-4); }
+      .user-menu { gap: var(--space-2); }
+      #rtlToggle { padding: 0 var(--space-2) !important; font-size: 12px !important; width: auto; }
+    }
+
     /* Stats Grid */
     .stats-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: var(--space-6);
       margin-bottom: var(--space-8);
     }
@@ -112,7 +204,10 @@
       border-radius: var(--radius-xl); 
       padding: var(--space-6); 
       border: 1px solid var(--border);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
+    
+    .stat-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
     
     .stat-header {
       display: flex;
@@ -162,7 +257,7 @@
     /* Content Grid */
     .content-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
       gap: var(--space-8);
       margin-bottom: var(--space-8);
     }
@@ -177,6 +272,8 @@
     
     .chart-header {
       display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
       align-items: center;
       justify-content: space-between;
       margin-bottom: var(--space-6);
@@ -188,10 +285,13 @@
       justify-content: space-between;
       height: 180px;
       gap: var(--space-3);
+      overflow-x: auto;
+      padding-bottom: var(--space-2);
     }
     
     .chart-bar-wrapper {
       flex: 1;
+      min-width: 40px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -206,9 +306,7 @@
       min-height: 20px;
     }
     
-    .chart-bar:hover {
-      opacity: 0.8;
-    }
+    .chart-bar:hover { opacity: 0.8; }
     
     .chart-label {
       font-size: var(--text-xs);
@@ -223,10 +321,7 @@
       border: 1px solid var(--border);
     }
     
-    .bookings-list {
-      display: flex;
-      flex-direction: column;
-    }
+    .bookings-list { display: flex; flex-direction: column; }
     
     .booking-item {
       display: flex;
@@ -236,15 +331,9 @@
       border-bottom: 1px solid var(--border);
     }
     
-    .booking-item:last-child {
-      border-bottom: none;
-    }
+    .booking-item:last-child { border-bottom: none; }
     
-    .booking-user {
-      display: flex;
-      align-items: center;
-      gap: var(--space-3);
-    }
+    .booking-user { display: flex; align-items: center; gap: var(--space-3); }
     
     .booking-avatar {
       width: 40px;
@@ -257,21 +346,10 @@
       font-size: var(--text-sm);
     }
     
-    .booking-info h4 {
-      font-size: var(--text-sm);
-      margin-bottom: var(--space-1);
-    }
+    .booking-info h4 { font-size: var(--text-sm); margin-bottom: var(--space-1); }
+    .booking-info p { font-size: var(--text-xs); color: var(--text-muted); margin: 0; }
     
-    .booking-info p {
-      font-size: var(--text-xs);
-      color: var(--text-muted);
-      margin: 0;
-    }
-    
-    .booking-amount {
-      font-weight: 600;
-      color: var(--text);
-    }
+    .booking-amount { font-weight: 600; color: var(--text); }
     
     /* Events Table */
     .events-card {
@@ -283,19 +361,16 @@
     
     .events-header {
       display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
       align-items: center;
       justify-content: space-between;
       margin-bottom: var(--space-6);
     }
     
-    .table-container {
-      overflow-x: auto;
-    }
+    .table-container { overflow-x: auto; }
     
-    .data-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
+    .data-table { width: 100%; border-collapse: collapse; }
     
     .data-table th {
       text-align: left;
@@ -308,20 +383,10 @@
       border-bottom: 1px solid var(--border);
     }
     
-    .data-table td {
-      padding: var(--space-4);
-      border-bottom: 1px solid var(--border);
-    }
+    .data-table td { padding: var(--space-4); border-bottom: 1px solid var(--border); }
+    .data-table tr:last-child td { border-bottom: none; }
     
-    .data-table tr:last-child td {
-      border-bottom: none;
-    }
-    
-    .event-cell {
-      display: flex;
-      align-items: center;
-      gap: var(--space-3);
-    }
+    .event-cell { display: flex; align-items: center; gap: var(--space-3); }
     
     .event-thumb {
       width: 44px;
@@ -330,98 +395,67 @@
       object-fit: cover;
     }
     
-    .event-info h4 {
-      font-size: var(--text-sm);
-      margin-bottom: var(--space-1);
-    }
-    
-    .event-info p {
-      font-size: var(--text-xs);
-      color: var(--text-muted);
-      margin: 0;
-    }
+    .event-info h4 { font-size: var(--text-sm); margin-bottom: var(--space-1); }
+    .event-info p { font-size: var(--text-xs); color: var(--text-muted); margin: 0; }
     
     /* Page Title */
     .page-header {
       display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4);
       align-items: center;
       justify-content: space-between;
       margin-bottom: var(--space-8);
     }
     
-    .page-title h1 {
-      font-size: var(--text-2xl);
-      margin-bottom: var(--space-1);
-    }
+    .page-title h1 { font-size: var(--text-2xl); margin-bottom: var(--space-1); }
+    .page-title p { color: var(--text-muted); margin: 0; }
     
-    .page-title p {
-      color: var(--text-muted);
-      margin: 0;
-    }
-    
-    /* User Menu */
-    .user-menu {
-      display: flex;
-      align-items: center;
-      gap: var(--space-3);
-    }
-    
-    .user-avatar {
-      width: 40px;
-      height: 40px;
-      background: var(--secondary);
-      border-radius: var(--radius-full);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: 600;
-      font-size: var(--text-sm);
-    }
-    
-    .user-info {
-      line-height: 1.3;
-    }
-    
-    .user-name {
-      font-weight: 600;
-      font-size: var(--text-sm);
-      color: var(--text);
-    }
-    
-    .user-role {
-      font-size: var(--text-xs);
-      color: var(--text-muted);
-    }
-    
-    /* Mobile Sidebar Toggle - Only visible on mobile */
-    .sidebar-toggle {
-      display: none;
-    }
-    
-    /* Responsive */
-    @media (max-width: 1200px) {
-      .stats-grid { grid-template-columns: repeat(2, 1fr); }
-      .content-grid { grid-template-columns: 1fr; }
-    }
-    
-    @media (max-width: 639px) {
-      .dashboard-sidebar { 
-        transform: translateX(-100%); 
-      }
-      .dashboard-sidebar.open { 
-        transform: translateX(0); 
-      }
-      .dashboard-main { 
-        margin-left: 0; 
-      }
-      .sidebar-toggle {
-        display: flex;
-      }
-      .stats-grid { grid-template-columns: 1fr; }
+    /* Responsive Adjustments */
+    @media (max-width: 1024px) {
+      .dashboard-sidebar { transform: translateX(-100%); }
+      .dashboard-sidebar.open { transform: translateX(0); }
+      .dashboard-main { margin-left: 0; width: 100%; }
+      .sidebar-toggle { display: flex; }
       .user-info { display: none; }
-      .data-table { font-size: var(--text-sm); }
-      .event-thumb { width: 36px; height: 36px; }
+      .dashboard-content { padding: var(--space-4); }
+      .booking-item { flex-wrap: wrap; gap: var(--space-2); }
+      .booking-amount { width: 100%; text-align: left; padding-left: 52px; }
+    }
+
+    /* Responsive Table Stack */
+    @media (max-width: 768px) {
+      .table-container { overflow-x: visible; padding: 1px; }
+      .data-table, .data-table thead, .data-table tbody, .data-table th, .data-table td, .data-table tr { display: block; }
+      .data-table thead { display: none; }
+      .data-table tr { 
+        margin-bottom: var(--space-4); 
+        border: 1px solid var(--border); 
+        border-radius: var(--radius-xl);
+        background: var(--bg-card);
+        overflow: hidden;
+      }
+      .data-table td { 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        text-align: right;
+        padding: var(--space-3) var(--space-4);
+        border-bottom: 1px solid var(--border);
+        font-size: var(--text-sm);
+      }
+      .data-table td:last-child { border-bottom: none; }
+      .data-table td::before { 
+        content: attr(data-label); 
+        font-weight: 600; 
+        color: var(--text-muted); 
+        text-transform: uppercase; 
+        font-size: 10px;
+        letter-spacing: 0.05em;
+        flex: 1;
+        text-align: left;
+      }
+      .event-cell { justify-content: flex-end; }
     }
   </style>
   
@@ -429,9 +463,10 @@
 </head>
 <body>
   <div class="dashboard-layout">
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
     <!-- Sidebar -->
     <aside class="dashboard-sidebar" id="dashboardSidebar">
-      <div style="padding: var(--space-5); border-bottom: 1px solid var(--border);">
+      <div style="padding: var(--space-5); border-bottom: 1px solid var(--border); margin-bottom: var(--space-2);">
         <a href="index.html" class="navbar-brand" style="font-size: var(--text-lg);">
           <div class="navbar-brand-icon" style="width: 36px; height: 36px;">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -446,7 +481,7 @@
       
             <nav class="dashboard-nav">
         <div class="dashboard-nav-section">Main</div>
-        <a href="dashboard-admin.html" class="dashboard-nav-link">
+        <a href="dashboard-admin.html" class="dashboard-nav-link active">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
           Overview
         </a>
@@ -539,17 +574,14 @@
         
         <!-- Stats Grid -->
         <div class="stats-grid">
-          <div class="stat-card">
+          <div class="stat-card glass-card">
             <div class="stat-header">
               <div>
                 <div class="stat-value">$48,250</div>
                 <div class="stat-label">Total Revenue</div>
               </div>
-              <div class="stat-icon green">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <line x1="12" y1="1" x2="12" y2="23"></line>
-                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                </svg>
+              <div class="stat-icon" style="width: 54px; height: 54px;">
+                <img src="../assets/images/ui/v4/revenue_3d.png" alt="Revenue" style="width: 100%; height: 100%; object-fit: contain;">
               </div>
             </div>
             <div class="stat-change positive">
@@ -560,18 +592,14 @@
             </div>
           </div>
           
-          <div class="stat-card">
+          <div class="stat-card glass-card">
             <div class="stat-header">
               <div>
                 <div class="stat-value">1,247</div>
                 <div class="stat-label">Tickets Sold</div>
               </div>
-              <div class="stat-icon purple">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                  <line x1="16" y1="2" x2="16" y2="6"></line>
-                  <line x1="8" y1="2" x2="8" y2="6"></line>
-                </svg>
+              <div class="stat-icon" style="width: 54px; height: 54px;">
+                <img src="../assets/images/ui/v4/tickets_3d.png" alt="Tickets" style="width: 100%; height: 100%; object-fit: contain;">
               </div>
             </div>
             <div class="stat-change positive">
@@ -582,17 +610,14 @@
             </div>
           </div>
           
-          <div class="stat-card">
+          <div class="stat-card glass-card">
             <div class="stat-header">
               <div>
                 <div class="stat-value">12,450</div>
                 <div class="stat-label">Active Members</div>
               </div>
-              <div class="stat-icon gold">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="9" cy="7" r="4"></circle>
-                </svg>
+              <div class="stat-icon" style="width: 54px; height: 54px;">
+                <img src="../assets/images/ui/v4/members_3d.png" alt="Members" style="width: 100%; height: 100%; object-fit: contain;">
               </div>
             </div>
             <div class="stat-change positive">
@@ -603,19 +628,14 @@
             </div>
           </div>
           
-          <div class="stat-card">
+          <div class="stat-card glass-card">
             <div class="stat-header">
               <div>
                 <div class="stat-value">18</div>
                 <div class="stat-label">Upcoming Events</div>
               </div>
-              <div class="stat-icon pink">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                  <line x1="16" y1="2" x2="16" y2="6"></line>
-                  <line x1="8" y1="2" x2="8" y2="6"></line>
-                  <line x1="3" y1="10" x2="21" y2="10"></line>
-                </svg>
+              <div class="stat-icon" style="width: 54px; height: 54px;">
+                <img src="../assets/images/ui/v4/events_3d.png" alt="Events" style="width: 100%; height: 100%; object-fit: contain;">
               </div>
             </div>
             <div style="font-size: var(--text-xs); color: var(--text-muted); margin-top: var(--space-2);">Next 30 days</div>
@@ -733,55 +753,52 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>
+                  <td data-label="Event">
                     <div class="event-cell">
-                      <img src="../assets/images/bands/band-1.webp" alt="" class="event-thumb">
                       <div class="event-info">
                         <h4>Electric Dreams Tour</h4>
                         <p>The Echoes</p>
                       </div>
                     </div>
                   </td>
-                  <td>Mar 25, 2024</td>
-                  <td>Main Stage</td>
-                  <td>642/800</td>
-                  <td>$28,890</td>
-                  <td><span class="badge badge-success">On Sale</span></td>
-                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                  <td data-label="Date">Mar 25, 2024</td>
+                  <td data-label="Venue">Main Stage</td>
+                  <td data-label="Tickets Sold">642/800</td>
+                  <td data-label="Revenue">$28,890</td>
+                  <td data-label="Status"><span class="badge badge-success">On Sale</span></td>
+                  <td data-label="Actions"><button class="btn btn-ghost btn-sm">Edit</button></td>
                 </tr>
                 <tr>
-                  <td>
+                  <td data-label="Event">
                     <div class="event-cell">
-                      <img src="../assets/images/bands/band-2.webp" alt="" class="event-thumb">
                       <div class="event-info">
                         <h4>Jazz Under the Stars</h4>
                         <p>Midnight Jazz Quartet</p>
                       </div>
                     </div>
                   </td>
-                  <td>Mar 28, 2024</td>
-                  <td>Rooftop Lounge</td>
-                  <td>180/250</td>
-                  <td>$6,300</td>
-                  <td><span class="badge badge-success">On Sale</span></td>
-                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                  <td data-label="Date">Mar 28, 2024</td>
+                  <td data-label="Venue">Rooftop Lounge</td>
+                  <td data-label="Tickets Sold">180/250</td>
+                  <td data-label="Revenue">$6,300</td>
+                  <td data-label="Status"><span class="badge badge-success">On Sale</span></td>
+                  <td data-label="Actions"><button class="btn btn-ghost btn-sm">Edit</button></td>
                 </tr>
                 <tr>
-                  <td>
+                  <td data-label="Event">
                     <div class="event-cell">
-                      <img src="../assets/images/bands/band-3.webp" alt="" class="event-thumb">
                       <div class="event-info">
                         <h4>Electric Nights Festival</h4>
                         <p>Neon Pulse</p>
                       </div>
                     </div>
                   </td>
-                  <td>Apr 2, 2024</td>
-                  <td>Main Stage</td>
-                  <td>425/800</td>
-                  <td>$25,500</td>
-                  <td><span class="badge badge-warning">Selling Fast</span></td>
-                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                  <td data-label="Date">Apr 2, 2024</td>
+                  <td data-label="Venue">Main Stage</td>
+                  <td data-label="Tickets Sold">425/800</td>
+                  <td data-label="Revenue">$25,500</td>
+                  <td data-label="Status"><span class="badge badge-warning">Selling Fast</span></td>
+                  <td data-label="Actions"><button class="btn btn-ghost btn-sm">Edit</button></td>
                 </tr>
               </tbody>
             </table>
@@ -795,10 +812,34 @@
   <script src="../assets/js/main.js"></script>
   <script>
     // Mobile sidebar toggle
-    document.getElementById('sidebarToggle')?.addEventListener('click', () => {
-      document.getElementById('dashboardSidebar')?.classList.toggle('open');
+    const sidebar = document.getElementById('dashboardSidebar');
+    const overlay = document.getElementById('sidebarOverlay');
+    const toggle = document.getElementById('sidebarToggle');
+
+    function toggleSidebar() {
+      sidebar?.classList.toggle('open');
+      overlay?.classList.toggle('active');
+      document.body.style.overflow = sidebar?.classList.contains('open') ? 'hidden' : '';
+    }
+
+    toggle?.addEventListener('click', toggleSidebar);
+    overlay?.addEventListener('click', toggleSidebar);
+
+    // Close sidebar on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && sidebar?.classList.contains('open')) {
+        toggleSidebar();
+      }
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 1024 && sidebar?.classList.contains('open')) {
+        toggleSidebar();
+      }
     });
   </script>
 </body>
 </html>
+
 

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -252,6 +252,8 @@
     /* Page Title */
     .page-header {
       display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4);
       align-items: center;
       justify-content: space-between;
       margin-bottom: var(--space-8);
@@ -313,7 +315,7 @@
       .content-grid { grid-template-columns: 1fr; }
     }
     
-    @media (max-width: 639px) {
+    @media (max-width: 1024px) {
       .dashboard-sidebar { 
         transform: translateX(-100%); 
       }
@@ -328,6 +330,43 @@
       }
       .stats-grid { grid-template-columns: 1fr; }
       .user-info { display: none; }
+      .dashboard-content { padding: var(--space-4); }
+      .card { border-radius: var(--radius-lg); }
+
+      /* Responsive Table Stack */
+      @media (max-width: 768px) {
+        .table-container { overflow-x: visible; }
+        .table, .table thead, .table tbody, .table th, .table td, .table tr { display: block; }
+        .table thead { display: none; }
+        .table tr { 
+          margin-bottom: var(--space-4); 
+          border: 1px solid var(--border); 
+          border-radius: var(--radius-lg);
+          background: var(--bg-card);
+          overflow: hidden;
+        }
+        .table td { 
+          display: flex; 
+          justify-content: space-between; 
+          align-items: center; 
+          text-align: right;
+          padding: var(--space-3) var(--space-4);
+          border-bottom: 1px solid var(--border);
+          font-size: var(--text-sm);
+        }
+        .table td:last-child { border-bottom: none; }
+        .table td::before { 
+          content: attr(data-label); 
+          font-weight: 600; 
+          color: var(--text-muted); 
+          text-transform: uppercase; 
+          font-size: 10px;
+          letter-spacing: 0.05em;
+          flex: 1;
+          text-align: left;
+        }
+        .table td strong { display: block; }
+      }
     }
   </style>
   
@@ -445,20 +484,20 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>#ORD-8472</td>
-                  <td><strong>Electric Dreams Tour</strong><br><span class="text-xs text-muted">2 Tickets</span></td>
-                  <td>Mar 15, 2024</td>
-                  <td>$120.00</td>
-                  <td><span class="badge badge-success">Confirmed</span></td>
-                  <td><button class="btn btn-ghost btn-sm">View Ticket</button></td>
+                  <td data-label="Order ID">#ORD-8472</td>
+                  <td data-label="Event"><strong>Electric Dreams Tour</strong><br><span class="text-xs text-muted">2 Tickets</span></td>
+                  <td data-label="Date">Mar 15, 2024</td>
+                  <td data-label="Total">$120.00</td>
+                  <td data-label="Status"><span class="badge badge-success">Confirmed</span></td>
+                  <td data-label="Actions"><button class="btn btn-ghost btn-sm">View Ticket</button></td>
                 </tr>
                 <tr>
-                  <td>#ORD-8461</td>
-                  <td><strong>Jazz Under the Stars</strong><br><span class="text-xs text-muted">1 Ticket</span></td>
-                  <td>Jan 22, 2024</td>
-                  <td>$45.00</td>
-                  <td><span class="badge badge-error">Cancelled</span></td>
-                  <td><button class="btn btn-ghost btn-sm">Details</button></td>
+                  <td data-label="Order ID">#ORD-8461</td>
+                  <td data-label="Event"><strong>Jazz Under the Stars</strong><br><span class="text-xs text-muted">1 Ticket</span></td>
+                  <td data-label="Date">Jan 22, 2024</td>
+                  <td data-label="Total">$45.00</td>
+                  <td data-label="Status"><span class="badge badge-error">Cancelled</span></td>
+                  <td data-label="Actions"><button class="btn btn-ghost btn-sm">Details</button></td>
                 </tr>
               </tbody>
             </table>
@@ -477,4 +516,5 @@
   </script>
 </body>
 </html>
+
 

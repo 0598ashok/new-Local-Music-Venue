@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -252,6 +252,8 @@
     /* Page Title */
     .page-header {
       display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4);
       align-items: center;
       justify-content: space-between;
       margin-bottom: var(--space-8);
@@ -313,7 +315,7 @@
       .content-grid { grid-template-columns: 1fr; }
     }
     
-    @media (max-width: 639px) {
+    @media (max-width: 1024px) {
       .dashboard-sidebar { 
         transform: translateX(-100%); 
       }
@@ -328,6 +330,8 @@
       }
       .stats-grid { grid-template-columns: 1fr; }
       .user-info { display: none; }
+      .dashboard-content { padding: var(--space-4); }
+      .card-body { padding: var(--space-4); }
     }
   </style>
   
@@ -430,7 +434,7 @@
         <div class="card">
           <div class="card-body">
             <div style="border-bottom: 1px solid var(--border); padding-bottom: var(--space-4); margin-bottom: var(--space-4);">
-              <div class="d-flex justify-between items-start mb-2">
+              <div class="d-flex justify-between items-start mb-2" style="flex-wrap: wrap; gap: var(--space-2);">
                 <h4 style="color: var(--text);">Venue Support - Ticket Upgrade</h4>
                 <span class="text-xs text-muted">2 hours ago</span>
               </div>
@@ -438,7 +442,7 @@
               <button class="btn btn-ghost btn-sm mt-2">Read More</button>
             </div>
             <div style="border-bottom: 1px solid var(--border); padding-bottom: var(--space-4); margin-bottom: var(--space-4);">
-              <div class="d-flex justify-between items-start mb-2">
+              <div class="d-flex justify-between items-start mb-2" style="flex-wrap: wrap; gap: var(--space-2);">
                 <h4 style="color: var(--text);">System - Welcome to Loyalty Club!</h4>
                 <span class="text-xs text-muted">Mar 10, 2024</span>
               </div>
@@ -460,4 +464,5 @@
   </script>
 </body>
 </html>
+
 

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -229,10 +229,10 @@
          ============================================ -->
     <section class="section">
       <div class="container">
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-8);">
+        <div style="display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: center; justify-content: space-between; margin-bottom: var(--space-8);">
           <p style="color: var(--text-secondary); margin: 0;">Showing <strong>12</strong> of <strong>48</strong> events</p>
           
-          <div style="display: flex; align-items: center; gap: var(--space-3);">
+          <div style="display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3);">
             <span style="font-size: var(--text-sm); color: var(--text-muted);">Sort by:</span>
             <select class="form-select" style="min-width: 150px;">
               <option value="date">Date (Soonest)</option>
@@ -245,7 +245,7 @@
         
         <div class="events-grid">
           <!-- Event Cards -->
-          <article class="event-card">
+          <article class="event-card glass-card">
             <div class="event-card-image">
               <img src="../assets/images/bands/band-1.webp" alt="The Echoes" loading="lazy">
               <div class="event-card-date">
@@ -285,7 +285,7 @@
             </div>
           </article>
           
-          <article class="event-card">
+          <article class="event-card glass-card">
             <div class="event-card-image">
               <img src="../assets/images/bands/band-2.webp" alt="Midnight Jazz Quartet" loading="lazy">
               <div class="event-card-date">
@@ -325,7 +325,7 @@
             </div>
           </article>
           
-          <article class="event-card">
+          <article class="event-card glass-card">
             <div class="event-card-image">
               <img src="../assets/images/bands/band-3.webp" alt="Neon Pulse" loading="lazy">
               <div class="event-card-date">
@@ -365,7 +365,7 @@
             </div>
           </article>
           
-          <article class="event-card">
+          <article class="event-card glass-card">
             <div class="event-card-image">
               <img src="../assets/images/bands/band-4.webp" alt="Luna Rivers" loading="lazy">
               <div class="event-card-date">
@@ -404,7 +404,7 @@
             </div>
           </article>
           
-          <article class="event-card">
+          <article class="event-card glass-card">
             <div class="event-card-image">
               <img src="../assets/images/bands/band-5.webp" alt="Blue Soul Collective" loading="lazy">
               <div class="event-card-date">
@@ -444,7 +444,7 @@
             </div>
           </article>
           
-          <article class="event-card">
+          <article class="event-card glass-card">
             <div class="event-card-image">
               <img src="../assets/images/bands/band-6.webp" alt="Thunderstruck" loading="lazy">
               <div class="event-card-date">
@@ -485,7 +485,7 @@
         </div>
         
         <!-- Pagination -->
-        <div style="display: flex; align-items: center; justify-content: center; gap: var(--space-2); margin-top: var(--space-12);">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--space-2); margin-top: var(--space-12);">
           <button class="btn btn-ghost" disabled>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polyline points="15 18 9 12 15 6"></polyline>
@@ -493,7 +493,7 @@
             Previous
           </button>
           
-          <div style="display: flex; gap: var(--space-1);">
+          <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-1);">
             <button class="btn btn-primary" style="min-width: 40px; padding: var(--space-2);">1</button>
             <button class="btn btn-ghost" style="min-width: 40px; padding: var(--space-2);">2</button>
             <button class="btn btn-ghost" style="min-width: 40px; padding: var(--space-2);">3</button>

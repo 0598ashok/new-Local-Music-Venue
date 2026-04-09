@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -13,6 +13,24 @@
   <link rel="stylesheet" href="../assets/css/rtl.css">
   
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237c3aed' stroke-width='2'%3E%3Cpath d='M9 18V5l12-2v13'/%3E%3Ccircle cx='6' cy='18' r='3'/%3E%3Ccircle cx='18' cy='16' r='3'/%3E%3C/svg%3E">
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-12);
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-4);
+    }
+    @media (max-width: 768px) {
+      .contact-grid,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -135,12 +153,12 @@
     <!-- Contact Section -->
     <section class="section">
       <div class="container">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-12);">
+        <div class="contact-grid">
           <!-- Contact Form -->
-          <div class="card" style="padding: var(--space-8);">
+          <div class="card glass-card" style="padding: var(--space-8);">
             <h2 style="margin-bottom: var(--space-6);">Send Us a Message</h2>
             <form>
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">
+              <div class="form-grid">
                 <div class="form-group" style="margin-bottom: var(--space-4);">
                   <label class="form-label">First Name</label>
                   <input type="text" class="form-input" placeholder="John" required>
@@ -187,12 +205,9 @@
             <h2 style="margin-bottom: var(--space-6);">Contact Information</h2>
             
             <div style="display: flex; flex-direction: column; gap: var(--space-6);">
-              <div style="display: flex; align-items: flex-start; gap: var(--space-4);">
-                <div style="width: 48px; height: 48px; background: var(--primary-light); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: var(--primary); flex-shrink: 0;">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                    <circle cx="12" cy="10" r="3"></circle>
-                  </svg>
+              <div class="glass-card" style="display: flex; align-items: flex-start; gap: var(--space-4); padding: var(--space-5);">
+                <div style="width: 54px; height: 54px; flex-shrink: 0;">
+                  <img src="../assets/images/ui/v4/location_pin_3d.png" alt="Address" style="width: 100%; height: 100%; object-fit: contain;">
                 </div>
                 <div>
                   <h4 style="margin-bottom: var(--space-1);">Address</h4>
@@ -200,11 +215,9 @@
                 </div>
               </div>
               
-              <div style="display: flex; align-items: flex-start; gap: var(--space-4);">
-                <div style="width: 48px; height: 48px; background: var(--secondary-light); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: var(--secondary); flex-shrink: 0;">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                  </svg>
+              <div class="glass-card" style="display: flex; align-items: flex-start; gap: var(--space-4); padding: var(--space-5);">
+                <div style="width: 54px; height: 54px; flex-shrink: 0;">
+                  <img src="../assets/images/ui/v4/phone_3d.png" alt="Phone" style="width: 100%; height: 100%; object-fit: contain;">
                 </div>
                 <div>
                   <h4 style="margin-bottom: var(--space-1);">Phone</h4>
@@ -212,12 +225,9 @@
                 </div>
               </div>
               
-              <div style="display: flex; align-items: flex-start; gap: var(--space-4);">
-                <div style="width: 48px; height: 48px; background: var(--accent-light); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: var(--accent-dark); flex-shrink: 0;">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                    <polyline points="22,6 12,13 2,6"></polyline>
-                  </svg>
+              <div class="glass-card" style="display: flex; align-items: flex-start; gap: var(--space-4); padding: var(--space-5);">
+                <div style="width: 54px; height: 54px; flex-shrink: 0;">
+                  <img src="../assets/images/ui/v4/email_3d.png" alt="Email" style="width: 100%; height: 100%; object-fit: contain;">
                 </div>
                 <div>
                   <h4 style="margin-bottom: var(--space-1);">Email</h4>
@@ -225,12 +235,9 @@
                 </div>
               </div>
               
-              <div style="display: flex; align-items: flex-start; gap: var(--space-4);">
-                <div style="width: 48px; height: 48px; background: var(--info-light); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: var(--info); flex-shrink: 0;">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <polyline points="12 6 12 12 16 14"></polyline>
-                  </svg>
+              <div class="glass-card" style="display: flex; align-items: flex-start; gap: var(--space-4); padding: var(--space-5);">
+                <div style="width: 54px; height: 54px; flex-shrink: 0;">
+                  <img src="../assets/images/ui/v4/clock_3d.png" alt="Hours" style="width: 100%; height: 100%; object-fit: contain;">
                 </div>
                 <div>
                   <h4 style="margin-bottom: var(--space-1);">Hours</h4>

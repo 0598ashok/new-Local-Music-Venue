@@ -198,15 +198,16 @@
    ============================================ */
 
 [data-theme="dark"] .btn-primary {
-  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
-  color: #ffffff;
-  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.5), 0 0 30px rgba(139, 92, 246, 0.3);
+  background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
+  color: #0f172a;
+  box-shadow: 0 4px 20px rgba(167, 139, 250, 0.4), 0 0 40px rgba(124, 58, 237, 0.2);
+  font-weight: 700;
 }
 
 [data-theme="dark"] .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 30px rgba(139, 92, 246, 0.7), 0 0 50px rgba(139, 92, 246, 0.5);
-  color: #ffffff;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(167, 139, 250, 0.6), 0 0 60px rgba(124, 58, 237, 0.4);
+  color: #0f172a;
 }
 
 [data-theme="dark"] .btn-secondary {
