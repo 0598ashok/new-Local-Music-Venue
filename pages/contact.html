@@ -206,8 +206,11 @@
             
             <div style="display: flex; flex-direction: column; gap: var(--space-6);">
               <div class="glass-card" style="display: flex; align-items: flex-start; gap: var(--space-4); padding: var(--space-5);">
-                <div style="width: 54px; height: 54px; flex-shrink: 0;">
-                  <img src="../assets/images/ui/v4/location_pin_3d.png" alt="Address" style="width: 100%; height: 100%; object-fit: contain;">
+                <div style="width: 54px; height: 54px; flex-shrink: 0; background: var(--bg-card); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: var(--primary); box-shadow: var(--shadow-sm); border: 1px solid var(--border);">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
                 </div>
                 <div>
                   <h4 style="margin-bottom: var(--space-1);">Address</h4>
@@ -216,8 +219,10 @@
               </div>
               
               <div class="glass-card" style="display: flex; align-items: flex-start; gap: var(--space-4); padding: var(--space-5);">
-                <div style="width: 54px; height: 54px; flex-shrink: 0;">
-                  <img src="../assets/images/ui/v4/phone_3d.png" alt="Phone" style="width: 100%; height: 100%; object-fit: contain;">
+                <div style="width: 54px; height: 54px; flex-shrink: 0; background: var(--bg-card); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: var(--primary); box-shadow: var(--shadow-sm); border: 1px solid var(--border);">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
                 </div>
                 <div>
                   <h4 style="margin-bottom: var(--space-1);">Phone</h4>
@@ -226,8 +231,11 @@
               </div>
               
               <div class="glass-card" style="display: flex; align-items: flex-start; gap: var(--space-4); padding: var(--space-5);">
-                <div style="width: 54px; height: 54px; flex-shrink: 0;">
-                  <img src="../assets/images/ui/v4/email_3d.png" alt="Email" style="width: 100%; height: 100%; object-fit: contain;">
+                <div style="width: 54px; height: 54px; flex-shrink: 0; background: var(--bg-card); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: var(--primary); box-shadow: var(--shadow-sm); border: 1px solid var(--border);">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
                 </div>
                 <div>
                   <h4 style="margin-bottom: var(--space-1);">Email</h4>
@@ -236,8 +244,11 @@
               </div>
               
               <div class="glass-card" style="display: flex; align-items: flex-start; gap: var(--space-4); padding: var(--space-5);">
-                <div style="width: 54px; height: 54px; flex-shrink: 0;">
-                  <img src="../assets/images/ui/v4/clock_3d.png" alt="Hours" style="width: 100%; height: 100%; object-fit: contain;">
+                <div style="width: 54px; height: 54px; flex-shrink: 0; background: var(--bg-card); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: var(--primary); box-shadow: var(--shadow-sm); border: 1px solid var(--border);">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
                 </div>
                 <div>
                   <h4 style="margin-bottom: var(--space-1);">Hours</h4>
@@ -296,8 +307,41 @@
             </svg>
             The SoundBox
           </a>
-          <p class="footer-description">Your premier destination for live music experiences.</p>
+          <p class="footer-description">
+            Your premier destination for live music experiences.
+            Where artists and fans connect through unforgettable performances.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="footer-social-link" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                </path>
+              </svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+                </path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+              </svg>
+            </a>
+          </div>
         </div>
+
         <div>
           <h4 class="footer-title">Quick Links</h4>
           <ul class="footer-links">
@@ -308,25 +352,45 @@
             <li><a href="contact.html" class="footer-link">Contact</a></li>
           </ul>
         </div>
+
         <div>
           <h4 class="footer-title">Support</h4>
           <ul class="footer-links">
             <li><a href="dashboard-user.html" class="footer-link">My Account</a></li>
             <li><a href="#" class="footer-link">FAQs</a></li>
             <li><a href="#" class="footer-link">Ticket Policy</a></li>
+            <li><a href="#" class="footer-link">Accessibility</a></li>
+            <li><a href="#" class="footer-link">Venue Info</a></li>
           </ul>
         </div>
+
         <div>
           <h4 class="footer-title">Contact</h4>
           <ul class="footer-links">
             <li><a href="#" class="footer-link">123 Music Street, Downtown</a></li>
             <li><a href="tel:+1234567890" class="footer-link">(123) 456-7890</a></li>
             <li><a href="mailto:info@soundbox.com" class="footer-link">info@soundbox.com</a></li>
+            <li><a href="#" class="footer-link">Open: Tue-Sun, 6PM-2AM</a></li>
           </ul>
         </div>
       </div>
+
       <div class="footer-bottom">
         <p class="footer-copyright">Â© 2024 The SoundBox. All rights reserved.</p>
+        <div class="footer-payments">
+          <svg width="40" height="25" viewBox="0 0 40 25" fill="none">
+            <rect width="40" height="25" rx="4" fill="#fff" fill-opacity="0.1" />
+            <text x="20" y="16" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10">VISA</text>
+          </svg>
+          <svg width="40" height="25" viewBox="0 0 40 25" fill="none">
+            <rect width="40" height="25" rx="4" fill="#fff" fill-opacity="0.1" />
+            <text x="20" y="16" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="8">MC</text>
+          </svg>
+          <svg width="40" height="25" viewBox="0 0 40 25" fill="none">
+            <rect width="40" height="25" rx="4" fill="#fff" fill-opacity="0.1" />
+            <text x="20" y="16" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="8">AMEX</text>
+          </svg>
+        </div>
       </div>
     </div>
   </footer>
